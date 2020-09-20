@@ -85,6 +85,8 @@ def main():
         s_string("1", fuzzable=False)
         s_string("\r\n", fuzzable=False)
 
+        s_string("\r\n", fuzzable=False)
+
         s_block_end()
 
     # Define the sequence of messages
