@@ -20,7 +20,7 @@ if len(args.egg) == 4:
         outFile = open(args.out, "wb")
         outFile.write(new_sc)
         print("Generate encoded egghunter using below command:")
-        print("msfvenom -p generic/custom PAYLOADFILE="+ args.out + " -a x86 --platform windows -e <encoder> -f py")
+        print("msfvenom -p generic/custom PAYLOADFILE=" + args.out + " -a x86 --platform windows -e <encoder> -f py")
 else:
     print("Invalid egg, choose a 4-byte string such as \"W00T\"")
         
