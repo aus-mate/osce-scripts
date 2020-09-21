@@ -11,7 +11,7 @@ args = arg.parse_args()
 shellcode = bytearray(args.shellcode, 'ISO-8859-1').decode('unicode-escape').encode('ISO-8859-1')
 
 sc_len = len(shellcode)
-if((sc_len % 4) != 0): # check we can subencode this shellcode
+if((sc_len % 4) != 0): # check we can subencode this shellcode - if not apply nops?
     print("Shellcode is not divisible 4.")
     exit()
 reverse_sc = shellcode[::-1] # reverse the shellcode
@@ -58,3 +58,4 @@ for x in range(iter_req): # for every 4 bytes
     print("SUB EAX, " + "0x" + sub_3.hex())
     print("PUSH EAX")
     bytes_num += 4
+print("\nCALL EAX\n")
