@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import argparse
-import codecs
 
 arg = argparse.ArgumentParser(description="AND evaluate to 0")
 arg.add_argument("hex", action="store", help="Hex to be AND'd to 0")
@@ -19,4 +18,3 @@ while(1):
             break
     x +=1
 print("Found hex value: " + hex(x))
-
