@@ -5,7 +5,7 @@ import argparse
 # Arguments 
 arg = argparse.ArgumentParser(description="Template TCP Fuzzer For OSCE")
 arg.add_argument("host", action="store", help="Destination IP")
-arg.add_argument("-p", action="store", dest="port", required=True, help="Destination port")
+arg.add_argument("port", action="store", help="Destination port")
 arg.add_argument("-s", action="store", default=0, dest="skip", help="Skip n tests - default 0")
 arg.add_argument("-o", action="store", default="fuzz_results.csv", dest="outfile", help="CSV output file - default fuzz_results.csv")
 args = arg.parse_args()
