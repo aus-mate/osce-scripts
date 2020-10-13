@@ -3,12 +3,13 @@ import argparse
 import random
 
 arg = argparse.ArgumentParser(description="Generate SUB instructions for sub-encoding")
-arg.add_argument("hex", action="store", help="4-bytes to be sub-encoded - supply reversed")
+arg.add_argument("hex", action="store", help="4-bytes to be sub-encoded")
 arg.add_argument("-b", dest="badchars", action="store", default="\x00", help="badchars to avoid, format: \x00")
 args = arg.parse_args()
 
-start_val = (0 - int(args.hex, 16)) & 0xffffffff # 0 - value
-column_A = start_val.to_bytes(4, byteorder='little', signed=False) # convert to bytes
+args.hex = int(args.hex, 16).to_bytes(4, byteorder='little') # hacky but it works
+start_val = (0 - int.from_bytes(args.hex, byteorder='big')) & 0xffffffff # 0 - value
+column_A = start_val.to_bytes(4, byteorder='little') # convert to bytes
 column_B = bytearray(4) # initalize bytearrays
 column_C = bytearray(4)
 column_D = bytearray(4)
