@@ -3,7 +3,7 @@ import argparse
 import random
 import os
 
-arg = argparse.ArgumentParser(description="Generate SUB instructions for sub-encoding shellcode")
+arg = argparse.ArgumentParser(description="Generate SUB instructions for sub-encoding shellcode BROKEN use sub_encoder")
 arg.add_argument("shellcode", action="store", help="shellcode to be sub-encoded")
 arg.add_argument("-b", dest="badchars", action="store", default="\x00", help="badchars to avoid")
 arg.add_argument("-t", dest="targ_address", action="store", help="Target address of where decoded shellcode will be executed")
