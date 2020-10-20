@@ -18,7 +18,8 @@ def main():
     session = Session(
         sleep_time=1,
         index_start=int(args.skip),
-        fuzz_loggers=logger
+        fuzz_loggers=logger,
+        receive_data_after_fuzz=True
     )
     
     # Define a target
